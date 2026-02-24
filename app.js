@@ -232,7 +232,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   // Open mailto with pre-filled content as a reliable no-backend approach
   const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-  window.open(`mailto:abhaysharma8789work@gmail.com?subject=${subject}&body=${body}`);
+  window.open(`mailto:abhaysharma6368@gmail.com?subject=${subject}&body=${body}`);
 
   msg.textContent = '✅ Opening your email client…';
   msg.style.color = '#06b6d4';
