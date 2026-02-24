@@ -1,3 +1,29 @@
+/* === CUSTOM CURSOR === */
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursor-dot');
+window.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  cursorDot.style.left = e.clientX + 'px';
+  cursorDot.style.top = e.clientY + 'px';
+}, { passive: true });
+
+document.querySelectorAll('a, button, .proj-card, .skill-card, .contact-card').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+});
+
+/* === SPOTLIGHT EFFECT === */
+document.querySelectorAll('.proj-card, .skill-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  }, { passive: true });
+});
+
 /* === NAVBAR SCROLL === */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -267,3 +293,16 @@ window.addEventListener('scroll', () => {
     }
   }).catch(() => { /* silently keep original behaviour */ });
 })();
+
+/* === MAGNETIC BUTTONS === */
+document.querySelectorAll('.btn-primary, .btn-outline, .hero-badge').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+  });
+});
