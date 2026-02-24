@@ -137,6 +137,8 @@ img { max-width: 100%; }
 .contact-card:hover { border-color:var(--purple); transform:translateX(6px); }
 .cc-icon { width:46px; height:46px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:rgba(124,58,237,.15); font-size:1.3rem; flex-shrink:0; }
 .cc-icon.li { background:rgba(6,182,212,.15); }
+.cc-icon.wa { background:rgba(37,211,102,.15); color:#25d366; }
+.cc-icon.inst { background:rgba(225,48,108,.15); color:#e1306c; }
 .cc-icon.em { font-size:1.4rem; }
 .contact-card strong { display:block; font-size:.95rem; }
 .contact-card small { color:var(--muted); font-size:.8rem; }
